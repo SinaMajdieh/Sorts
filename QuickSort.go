@@ -15,12 +15,12 @@ func Partition(low int, high int) (partition int) {
 	for i := low; i < high; i++ {
 		switch ascending {
 		case true:
-			if array[i] >= great {
+			if array[i] <= great {
 				swap(i, partition)
 				partition++
 			}
 		case false:
-			if array[i] <= great {
+			if array[i] >= great {
 				swap(i, partition)
 				partition++
 			}
@@ -39,8 +39,8 @@ func Sort(low int, high int) {
 }
 
 //Quick Sort Algorithm
-func QuickSort(Ascending bool, Array []int) []int {
+func QuickSort(Ascending bool, Array []int) {
 	array = Array
+	ascending = Ascending
 	Sort(0, len(array)-1)
-	return array
 }
