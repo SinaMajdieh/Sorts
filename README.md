@@ -6,8 +6,8 @@ Using Quick Sort algorith to sort the array bot ascending and descending by givi
 You can pass int array or float64 array to QuickSort.  
 This function affect the array and returns nothing.  
 
-You can use it like this:\n
-    ```golang
+You can use it like this:  
+    ``` go
     x := []int{3 , 7 , 10 , 6}
     Sorts.QuickSort(true , x)
     ```
