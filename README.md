@@ -4,11 +4,7 @@ A package of different sort algorithm in go
 ## Quick Sort
 Using Quick Sort algorith to sort the array bot ascending and descending by giving Ascending parameter false or true.  
 You can pass int array or float64 array to QuickSort.  
-This function does NOT affect the array and returns a 
-```go
- []float64 
-``` 
-slice.  
+This function does NOT affect the array and returns a []float64 slice.  
 
 You can use it like this:   
 ```go  
@@ -19,15 +15,11 @@ You can use it like this:
 ## Bubble Sort
 Using Bubble Sort algorith to sort the array bot ascending and descending by giving Ascending parameter false or true.  
 You can pass int array or float64 array to BubbleSort.  
-This function does NOT affect the array and returns
-```go
-[]float64
-```
-slice.    
+This function does NOT affect the array and returns []float64 slice.    
 
 You can use it like this:  
 ```go
     x := []int{3 , 7 , 10 , 6}
-    Sorts.BubbleSort(true , x)
+    y := Sorts.BubbleSort(true , x)
 ```
 
