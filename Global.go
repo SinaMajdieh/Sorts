@@ -6,10 +6,11 @@ func swap(i int, j int, array []float64) {
 	array[j] = x
 }
 
-
-func  intstofloats(Array []int , array []float64) {
+func intstofloats(Array []int) []float64 {
+	var array []float64
 	for _, v := range Array {
 		array = append(array, float64(v))
 	}
+	return array
 
 }
