@@ -7,9 +7,9 @@ You can pass int array or float64 array to QuickSort.
 This function affect the array and returns nothing.  
 
 You can use it like this:  
-    ``` golang
-    x := []int{3 , 7 , 10 , 6}
-    Sorts.QuickSort(true , x)
+    ``` golang  
+    x := []int{3 , 7 , 10 , 6}  
+    Sorts.QuickSort(true , x)  
     ```
 
 ## Bubble Sort
