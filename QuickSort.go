@@ -1,46 +1,53 @@
 package Sorts
 
-var array []int
-var ascending bool
+import "fmt"
 
-func swap(i int, j int) {
-	x := array[i]
-	array[i] = array[j]
-	array[j] = x
+type quick struct {
+	array     []float64
+	ascending bool
 }
 
-func Partition(low int, high int) (partition int) {
+func (q quick) partition(low int, high int) (partition int) {
 	partition = low
-	great := array[high]
+	great := q.array[high]
 	for i := low; i < high; i++ {
-		switch ascending {
+		switch q.ascending {
 		case true:
-			if array[i] <= great {
-				swap(i, partition)
+			if q.array[i] <= great {
+				swap(i, partition, q.array)
 				partition++
 			}
 		case false:
-			if array[i] >= great {
-				swap(i, partition)
+			if q.array[i] >= great {
+				swap(i, partition, q.array)
 				partition++
 			}
 		}
 	}
-	swap(partition, high)
+	swap(partition, high, q.array)
 	return
 }
 
-func Sort(low int, high int) {
+func (q quick) sort(low int, high int) {
 	if low < high {
-		partition := Partition(low, high)
-		Sort(low, partition-1)
-		Sort(partition+1, high)
+		p := q.partition(low, high)
+		q.sort(low, p-1)
+		q.sort(p+1, high)
 	}
 }
 
 //Quick Sort Algorithm
-func QuickSort(Ascending bool, Array []int) {
-	array = Array
-	ascending = Ascending
-	Sort(0, len(array)-1)
+func QuickSort(Ascending bool, Array interface{}) {
+	q := quick{}
+	switch Array.(type) {
+	case []int:
+		intstofloats(Array.([]int) , q.array)
+	case []float64:
+		q.array = Array.([]float64)
+	default:
+		fmt.Printf("Cannot sort type %T\n", Array)
+	}
+
+	q.ascending = Ascending
+	q.sort(0, len(q.array)-1)
 }
