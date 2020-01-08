@@ -26,19 +26,24 @@ func (b *bubble) sort() {
 }
 
 //Bubble Sort Algorithm
-func BubbleSort(Ascending bool, Array interface{}) {
+func BubbleSort(Ascending bool, Array interface{}) []float64 {
 	b := bubble{}
+
 	switch Array.(type) {
 	case []int:
-		intstofloats(Array.([]int), b.array)
+		array := intstofloats(Array.([]int))
+		b.array = make([]float64, len(Array.([]int)))
+		copy(b.array, array)
 	case []float64:
-		b.array = Array.([]float64)
+		b.array = make([]float64, len(Array.([]float64)))
+		copy(b.array, Array.([]float64))
 	default:
 		fmt.Printf("Cannot sort type %T\n", Array)
-		return
+		return nil
 	}
 	b.len = len(b.array) - 1
 	b.ascending = Ascending
 
 	b.sort()
+	return b.array
 }
