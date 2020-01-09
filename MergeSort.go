@@ -66,6 +66,7 @@ func (m merge) mergesort(l int, r int) {
 	}
 }
 
+//Merge Sort Algorithm
 func MergeSort(Ascending bool, Array interface{}) []float64 {
 	m := merge{}
 	switch Array.(type) {
