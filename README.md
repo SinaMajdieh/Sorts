@@ -33,3 +33,14 @@ You can use it like this:
     x := []int{3 , 7 , 10 , 6}
     y := Sorts.MergeSort(true , x)
 ```
+
+## Insertion Sort
+Using the Insertion Sort algorithm sort the array, both ascending and descending by giving Ascending parameter false or true.  
+You can pass int array or float64 array to the InsertionSort function.  
+This function does NOT affect the array and returns a []float64 slice.    
+
+You can use it like this:  
+```go
+    x := []int{3 , 7 , 10 , 6}
+    y := Sorts.InsertionSort(true , x)
+```
